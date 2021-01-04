@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    text-decoration:none;
+    font-family: 'roboto' ,sans-serif;
+    list-style: none;
+}
+
+main{
+ overflow: hidden;
+}
+:root {
+ --color-fondo: #1b262c;
+ --Color-primario:#eef5ff;
+ --Color-secundario: #3282b8;
+ --Color-texto:black;
+ --tamaño-titulos:2em;
+ --sombra-imagenes:drop-shadow(0 2px 5px rgba(0, 0, 0, 0.8));
+ --pama:5em;
+}
+body {
+    background-color: var(--color-fondo);
+}
+/* header*/
+header {
+    top: 0;
+    width: 100%;
+    background-color:transparent;
+    padding:16px;
+    z-index: 2;
+    position: fixed;
+    
+   }
+   .menu-cel {
+       display: none;
+       
+   } 
+   .logo {
+       color: rgb(255, 255, 255);
+   }
+   .navegacion{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+   nav ul li {
+       display: inline-block;
+   }
+   nav ul li a {
+       display: block;
+       padding: 0 1em;
+       transition:all 1s linear;
+       font-size: 1.1250em;
+       color:rgb(255, 255, 255);
+   }
+   nav ul li a:hover {
+       border-bottom: 3px solid black;
+   }
+   .sticky  {
+       width: 100%;
+       height: 60px;
+       background-color: var(--Color-secundario);
+       padding:16px;
+       box-shadow: 0 4px 25px -22px rgb(0, 0, 0);
+       border-bottom: 1px solid black;
+       z-index: 2;
+   }
+   .sticky nav ul li a {
+       color: white;
+   }
+   .sticky .logo {
+       color: white;
+   }
+
+/* menu cel */
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 4px;
+    background-color:white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+ .change .bar2 {
+     opacity: 0;
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+/* movil */
+@media only screen  and (min-width: 270px) and (max-width: 600px) {
+     /* hamburguer */
+     header {
+        top: 0;
+    }
+   .logo,.menu-cel{
+       color: rgb(255, 255, 255);
+   }
+   .menu-cel {
+        display: inline-block;
+       cursor: pointer;
+    }
+    nav ul {
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        height:100vh;
+        z-index: 1;
+        transform: translateX(-110%);
+        position: absolute;
+        background-color: rgb(103, 103, 103);
+        top: 0;
+        transition: 1s ease-in-out;
+        padding-top:70px;
+    }
+    nav .mostrar { 
+        top: 0;
+        left: 0;
+        display: block;
+        position: absolute;
+        background-color: rgb(103, 103, 103);
+        width:75vw;
+        height:100vh;
+        z-index: 1;
+        transform: translateX(0%);
+        flex-flow:row nowrap;
+        padding-top:70px;
+    }
+     .mostrar li {
+      background-color: rgb(103, 103, 103);
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+    nav ul li a {
+        margin-top: 20px;
+        display: block;
+        padding-top:10px;
+        transition:all 0.4s linear;
+        font-size: 20px;
+        color:orange;
+        text-align: center;
+    }
+    /* hero */
+    .hero{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #1b262c;
+    }
+    .hero h1{
+        padding:3rem 1rem;
+        color:var(--Color-secundario);
+        text-align: center;
+        font-size: 2.4em;
+    }
+    .hero img {
+        padding:0 2rem;
+        width: 100vw;
+        height: auto;
+        filter: var(--sombra-imagenes);
+    }
+    .hero #cel {
+        width: 28vw;
+        height: auto;
+        margin-top:-50vh;
+        padding:0.5rem;
+        margin-left: 1rem ;
+    }
+    /* habilidades */
+    #Habilidades{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--Color-secundario);
+    }
+    #Habilidades h1 {
+        text-align: center;
+        font-size: 2.2em;
+        color: white;
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    .habilidades {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top:1rem ;
+        padding-bottom:2rem ;
+    }
+    .habilidades img {
+        width: 30vw;
+        height: 30vw;
+        filter:var(--sombra-imagenes);
+        padding:1rem;
+    }
+    /* servicios */
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px)and (max-width: 767px) {
+    /* hamburguer */
+    header {
+        top: 0;
+    }
+   .logo,.menu-cel{
+       color: rgb(255, 255, 255);
+   }
+   .menu-cel {
+        display: inline-block;
+       cursor: pointer;
+    }
+    nav ul {
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        height:100vh;
+        z-index: 1;
+        transform: translateX(-110%);
+        position: absolute;
+        background-color: rgb(103, 103, 103);
+        top: 0;
+        transition: 1s ease-in-out;
+        padding-top:70px;
+    
+    }
+    nav .mostrar { 
+        top: 0;
+        left: 0;
+        display: block;
+        position: absolute;
+        background-color: rgb(103, 103, 103);
+        width:75vw;
+        height:100vh;
+        z-index: 1;
+        transform: translateX(0%);
+        flex-flow:row nowrap;
+        padding-top:70px;
+    }
+     .mostrar li {
+      background-color: rgb(103, 103, 103);
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+    nav ul li a {
+        margin-top: 20px;
+        display: block;
+        padding-top:10px;
+        transition:all 0.4s linear;
+        font-size: 20px;
+        color:orange;
+        text-align: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* escritorio y otros */
+@media(min-width:1200px) {
+   
+}
+
+/* print */
+@media print {}

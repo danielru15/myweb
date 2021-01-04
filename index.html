@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <title>Daniel</title>
+</head>
+<body>
+    <header>
+        <div class="navegacion">
+            <div class="logo">
+                <h1>{ Danieldev }</h1>
+            </div>
+           <div class="navi">
+               <div class="menu-cel">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+                <nav class="mostrar">
+                    <ul>
+                       <li><a href="#inicio" >Inicio</a></li>
+                       <li><a href="#Servicios" >Servicios</a></li>
+                       <li><a href="#Portafolio">Portafolio</a></li>
+                       <li><a href="#Clientes">Clientes</a></li>
+                       <li class="border"><a href="#Contacto">Contactanos</a></li>
+                    </ul>
+               </nav>
+         </div>
+           </div>
+    </header>
+    <main>
+        <section class="hero" id="inicio" >
+            <h1 id="prototipo1">DESARROLLO WEB AL ALCANCE  DE TU MANO.</h1>
+            <div class="contenedor" >
+                <img src="/img/hero/Mockup.png" alt="imagen" id="pc">
+                <img src="/img/hero/cel.png" alt="cel" id="cel" >
+
+            </div>
+        </section>
+        <section id="Habilidades">
+            <h1 id="th"> { Habilidades }</h1>
+            <div class="habilidades" id="skill">
+                <img src="/img/skills/html-5.png" alt="html-5">
+                <img src="/img/skills/464-4640184_css3-png-download-css-icon-transparent-png.png" alt="css">
+                <img src="/img/skills/learn-javascript.png" alt="javascript">
+                <img src="/img/skills/0__rAD9NgK7l6KSlNc.png" alt="bootstrap"> 
+                <img src="/img/skills/figma.png" alt="figma">
+            </div>
+        </section>
+        <section id="Servicios">
+            <h1 id="t">{ Servicios }</h1>
+            <div class="services" id="Service">
+                <div class="servicio" >
+                    <h3> { Diseño }</h3>
+                 
+                    <p> Diseñamos el maquetado previo de cada sitio con un fuerte enfoque en funcionalidades UI/UX.</p>
+                </div>
+                <div class="servicio">
+                    <h3>{ Desarrollo web }</h3>
+                  
+                    <p>Hacemos tu pagina web realidad, con una interfaz de usuario agradable cumpliendo con el ui y el ux </p>
+                </div>
+                <div class="servicio">
+                    <h3>{ Hosting }</h3>
+                    
+                    <p>Contamos con el servicio de hosting y dominio para tus paginas web.</p>
+                </div>
+            </div>
+        </section>
+        <section id="Portafolio">
+            <h1 id="t#">{ Portafolio }</h1>
+            <button>ver mas</button>
+        </section>
+        <section id="Clientes">
+            <h1 id="t1">{ Clientes }</h1>
+        </section>
+        <section id="Contacto">
+            <h1 id="tt1">{ Contáctanos }</h1>
+            <div class="Contactanos">
+                <div class="formulario">
+                    <h4 id="info">Los campos marcados en * son requisitos obligatorios.</h4>
+                    <form  id="formulario" action="correo.php" method="POST">
+                        <label>Nombre:<p>*</p></label>
+                        <p id="Error"></p>
+                        <input type="text" id="name" name="Nombre" placeholder="Nombre:" >
+                        <label>Correo:<p>*</p></label>
+                        <p id="Error2"></p>
+                        <input type="text" id="email" name="Correo" placeholder="name@example.com">
+                        <label>Mensaje:<p>*</p></label>
+                        <p id="Error3"></p>
+                        <textarea id="texto" placeholder="escribenos" name="Mensaje" style="height:200px"></textarea >
+                        <button type="submit" value="Submit" id="enviar">Enviar</button>
+                        
+                      </form>
+                     
+                </div>
+                <div class="contacto">
+                    <ul>
+                        <li><img src="" alt=""><h2>Email: contacto@danieldev.com</h2></li>
+                        <li><img src="" alt=""><h2>Telefono: 3217513801</h2></li>
+                    </ul>
+                    <p>Gracias por comunicarte con {danieldev}, Necesitas una cotizacion, asesoria o soporte no dudes en escribirnos, con gusto te responderemos en un lapso no mayor a 24horas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="boton-arriba" id="up">
+        <img src="" alt="" >
+    </div>
+    <footer>
+            <h3 id="mname">{ Danieldev }</h3>
+            <h3>© 2020 { Danieldev }. All rights reserved</h3>
+        <div class="social">
+            <img src="" alt="instagram">
+            <img src="" alt="whatsapp">
+        </div>
+    </footer>
+    <script src="/scripts/animated.js"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
