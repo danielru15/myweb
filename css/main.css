@@ -92,6 +92,36 @@ header {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
+/* animacion boton*/
+@keyframes btnEntrance {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  } 
+  .btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;  
+    animation-name: btnExit;
+  }
+  @keyframes btnExit {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+/* error verificacion formulario */
+#Error,#Error2,#Error3 { 
+    font-size: 1em;
+    color: red;
+}
 /* movil */
 @media only screen  and (min-width: 270px) and (max-width: 600px) {
      /* hamburguer */
@@ -207,77 +237,1421 @@ header {
         padding:1rem;
     }
     /* servicios */
-    
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 601px)and (max-width: 767px) {
-    /* hamburguer */
-    header {
-        top: 0;
+    #Servicios{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
-   .logo,.menu-cel{
-       color: rgb(255, 255, 255);
-   }
-   .menu-cel {
-        display: inline-block;
-       cursor: pointer;
+    #Servicios h1 {
+        text-align: center;
+        font-size: 2.2em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
     }
-    nav ul {
-        left: 0;
+    .services {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90vw;
+        padding-top: 1rem;
+    }
+    .services .servicio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80vw;
+        min-height:35vh;
+        border-radius: .70rem;
+        border: 2px solid var(--Color-secundario);
+        margin:1rem 0;
+        box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+        padding: 1.5em;
+    }
+    .services .servicio h3 {
+        text-align: center;
+        font-size: 1.5em;
+        color:var(--Color-secundario);
+        padding-top: 1rem;
+    }
+    .services .servicio img{
+        margin: 1rem 0;
+        width: 20vw;
+        height: 20vw;
+    }
+    .services .servicio p {
+     line-height: 1.5;
+     color: white;
+     text-align: center;
+     font-size: 1.2em;
+    }
+    .services .servicio:hover {
+        background-color: var(--Color-secundario);
+        border: 2px solid var(--Color-primario);
+        transition: 0.5s;
+    }
+    .services .servicio:hover h3 {
+        color: white;
+    }    
+    /* Portafolio */
+    #Portafolio {
+        display: none;
+    }
+    /* Clientes */
+    #Clientes{
+        display: none;
+    }
+    /* contactanos */
+    #Contacto {
+        width:100vw;
+        min-height:100vh;
         display: flex;
         flex-direction: column;
-        width: 75vw;
-        height:100vh;
-        z-index: 1;
-        transform: translateX(-110%);
-        position: absolute;
-        background-color: rgb(103, 103, 103);
-        top: 0;
-        transition: 1s ease-in-out;
-        padding-top:70px;
-    
+        justify-content: center;
+        align-items: center;
     }
-    nav .mostrar { 
-        top: 0;
-        left: 0;
-        display: block;
-        position: absolute;
-        background-color: rgb(103, 103, 103);
-        width:75vw;
-        height:100vh;
-        z-index: 1;
-        transform: translateX(0%);
-        flex-flow:row nowrap;
-        padding-top:70px;
-    }
-     .mostrar li {
-      background-color: rgb(103, 103, 103);
-      display: flex;
-      justify-content: center;
-      text-transform: uppercase;
-    }
-    nav ul li a {
-        margin-top: 20px;
-        display: block;
-        padding-top:10px;
-        transition:all 0.4s linear;
-        font-size: 20px;
-        color:orange;
+    #Contacto h1 {
         text-align: center;
+        font-size: 2.2em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    #Contacto .Contactanos {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        padding: 0 0.5rem;
+    }
+    #Contacto .Contactanos .formulario input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+    label{
+        display: flex;
+        color: white;
+        font-size: 1.2em;
+    }
+    label p {
+        color: red;
+    }
+    #info {
+        color: red;
+        line-height: 1.5;
+        margin-bottom:.7rem ;
+        font-size: 1.2em;
+    }
+    #enviar{
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 30px;
+        border: 0;
+        color: white;
+        background-color: var(--Color-secundario);
+    }  
+    #Contacto .Contactanos .contacto{
+      padding:2rem 0;
+      width: 100%;
+    }  
+    #Contacto .Contactanos .contacto h3,p{
+        color: white;
+    }
+    #Contacto .Contactanos .contacto p{
+        margin-top: .5rem;
+        font-size: 1.2em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    span {
+        color: var(--Color-secundario);
+    }
+    /* boton-arriba */
+    .boton-arriba{
+        display: none;
+        width: 12vw;
+        height: 12vw;
+        bottom: 2vh;
+        right: 2vw;
+        position: fixed;
+        cursor: pointer;
+        outline: none;
+        background-color: var(--Color-primario);
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-property: background-color, color;
+        cursor: pointer;
+    }    
+    .boton-arriba  img{
+        margin:.4rem;
+        width: 8vw;
+        height: 8vw;
+    }
+    /* footer */
+    footer {
+        margin-top:5rem;
+        border-top: 2px solid white;
+        min-height: 5vh;
+        background-color: var(--Color-secundario);
+        padding: 1em;
+    }
+    footer h4{
+        text-align: center;
+        color: white;
     }
 }
-
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px)and (max-width: 767px) {
+   /* hamburguer */
+   header {
+    top: 0;
+}
+.logo,.menu-cel{
+   color: rgb(255, 255, 255);
+}
+.menu-cel {
+    display: inline-block;
+   cursor: pointer;
+}
+nav ul {
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height:100vh;
+    z-index: 1;
+    transform: translateX(-110%);
+    position: absolute;
+    background-color: rgb(103, 103, 103);
+    top: 0;
+    transition: 1s ease-in-out;
+    padding-top:70px;
+}
+nav .mostrar { 
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    background-color: rgb(103, 103, 103);
+    width:75vw;
+    height:100vh;
+    z-index: 1;
+    transform: translateX(0%);
+    flex-flow:row nowrap;
+    padding-top:70px;
+}
+ .mostrar li {
+  background-color: rgb(103, 103, 103);
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+nav ul li a {
+    margin-top: 20px;
+    display: block;
+    padding-top:10px;
+    transition:all 0.4s linear;
+    font-size: 20px;
+    color:orange;
+    text-align: center;
+}
+/* hero */
+.hero{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b262c;
+    margin-bottom: 3rem;
+}
+.hero h1{
+    padding:6rem 1rem;
+    color:var(--Color-secundario);
+    text-align: center;
+    font-size: 2.4em;
+}
+.hero img {
+    padding:0 2rem;
+    width: 100vw;
+    height: auto;
+    filter: var(--sombra-imagenes);
+}
+.hero #cel {
+    width: 28vw;
+    height: auto;
+    margin-top:-90vh;
+    padding:0.5rem;
+    margin-left: 1rem ;
+}
+/* habilidades */
+#Habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--Color-secundario);
+}
+#Habilidades h1 {
+    text-align: center;
+    font-size: 2.4em;
+    color: white;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.habilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top:1rem ;
+    padding-bottom:2rem ;
+}
+.habilidades img {
+    width: 20vw;
+    height: 20vw;
+    filter:var(--sombra-imagenes);
+    padding:1rem;
+}
+/* servicios */
+#Servicios{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#Servicios h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 95vw;
+    padding-top: 1rem;
+}
+.services .servicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    min-height:35vh;
+    border-radius: .70rem;
+    border: 2px solid var(--Color-secundario);
+    margin:1rem 0;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+}
+.services .servicio h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color:var(--Color-secundario);
+    padding-top: 1rem;
+}
+.services .servicio img{
+    margin: 1rem 0;
+    width: 12vw;
+    height: 12vw;
+}
+.services .servicio p {
+ line-height: 1.5;
+ color: white;
+ text-align: center;
+ font-size: 1.2em;
+}
+.services .servicio:hover {
+    background-color: var(--Color-secundario);
+    border: 2px solid var(--Color-primario);
+    transition: 0.5s;
+}
+.services .servicio:hover h3 {
+    color: white;
+}    
+/* Portafolio */
+#Portafolio {
+    display: none;
+}
+/* Clientes */
+#Clientes{
+    display: none;
+}
+/* contactanos */
+#Contacto {
+    width:100vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Contacto h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+#Contacto .Contactanos {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    padding: 0 0.5rem;
+}
+#Contacto .Contactanos .formulario input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+label{
+    display: flex;
+    color: white;
+    font-size: 1.2em;
+}
+label p {
+    color: red;
+}
+#info {
+    color: red;
+    line-height: 1.5;
+    margin-bottom:.7rem ;
+    font-size: 1.2em;
+}
+#enviar{
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+    background-color: var(--Color-secundario);
+}  
+#Contacto .Contactanos .contacto{
+  padding:2rem 0;
+  width: 100%;
+}  
+#Contacto .Contactanos .contacto h3,p{
+    color: white;
+}
+#Contacto .Contactanos .contacto p{
+    margin-top: .5rem;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: left;
+}
+span {
+    color: var(--Color-secundario);
+}
+/* boton-arriba */
+.boton-arriba{
+    display: none;
+    width: 8vw;
+    height:8vw;
+    bottom: 2vh;
+    right: 2vw;
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--Color-primario);
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+    cursor: pointer;
+}    
+.boton-arriba  img{
+    margin:.7rem;
+    width: 4vw;
+    height: 4vw;
+}
+/* footer */
+footer {
+    margin-top:5rem;
+    border-top: 2px solid white;
+    min-height: 5vh;
+    background-color: var(--Color-secundario);
+    padding: 1em;
+}
+footer h4{
+    text-align: center;
+    color: white;
+}
+}
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* hero */
+.hero{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b262c;
+    margin-bottom: 3rem;
+    margin-top:3rem ;
+}
+.hero h1{
+    padding:6rem 1rem;
+    color:var(--Color-secundario);
+    text-align: center;
+    font-size: 4em;
+}
+.hero img {
+    padding:0 2rem;
+    width: 100vw;
+    height: auto;
+    filter: var(--sombra-imagenes);
+}
+.hero #cel {
+    width: 28vw;
+    height: auto;
+    margin-top:-90vh;
+    padding:0.5rem;
+    margin-left: 1rem ;
+}
+/* habilidades */
+#Habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--Color-secundario);
+}
+#Habilidades h1 {
+    text-align: center;
+    font-size: 2.4em;
+    color: white;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.habilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top:1rem ;
+    padding-bottom:2rem ;
+}
+.habilidades img {
+    width: 20vw;
+    height: 20vw;
+    filter:var(--sombra-imagenes);
+    padding:1rem;
+}
+/* servicios */
+#Servicios{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#Servicios h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 95vw;
+    padding-top: 1rem;
+}
+.services .servicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    min-height:35vh;
+    border-radius: .70rem;
+    border: 2px solid var(--Color-secundario);
+    margin:1rem 0;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+}
+.services .servicio h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color:var(--Color-secundario);
+    padding-top: 1rem;
+}
+.services .servicio img{
+    margin: 1rem 0;
+    width: 12vw;
+    height: 12vw;
+}
+.services .servicio p {
+ line-height: 1.5;
+ color: white;
+ text-align: center;
+ font-size: 1.2em;
+}
+.services .servicio:hover {
+    background-color: var(--Color-secundario);
+    border: 2px solid var(--Color-primario);
+    transition: 0.5s;
+}
+.services .servicio:hover h3 {
+    color: white;
+}    
+/* Portafolio */
+#Portafolio {
+    display: none;
+}
+/* Clientes */
+#Clientes{
+    display: none;
+}
+/* contactanos */
+#Contacto {
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh ;
+}
+#Contacto h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+#Contacto .Contactanos {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    padding: 0 0.5rem;
+}
+#Contacto .Contactanos .formulario{
+    width: 90vw;
+}
+#Contacto .Contactanos .formulario input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+label{
+    display: flex;
+    color: white;
+    font-size: 1.2em;
+}
+label p {
+    color: red;
+}
+#info {
+    color: red;
+    line-height: 1.5;
+    margin-bottom:.7rem ;
+    font-size: 1.2em;
+}
+#enviar{
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+    background-color: var(--Color-secundario);
+}  
+#Contacto .Contactanos .contacto{
+  padding:2rem 0;
+  width: 90vw;
+}  
+#Contacto .Contactanos .contacto h3,p{
+    color: white;
+}
+#Contacto .Contactanos .contacto p{
+    margin-top: .5rem;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: left;
+}
+span {
+    color: var(--Color-secundario);
+}
+/* boton-arriba */
+.boton-arriba{
+    display: none;
+    width: 8vw;
+    height:8vw;
+    bottom: 2vh;
+    right: 2vw;
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--Color-primario);
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+    cursor: pointer;
+}    
+.boton-arriba  img{
+    margin:.7rem;
+    width: 4vw;
+    height: 4vw;
+}
+/* footer */
+footer {
+    margin-top:5rem;
+    border-top: 2px solid white;
+    min-height: 5vh;
+    background-color: var(--Color-secundario);
+    padding: 1em;
+}
+footer h4{
+    text-align: center;
+    color: white;
+}
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+     /* hero */
+     .hero {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+        padding:8rem 3rem;
+    }
+    .hero h1{
+        font-size: 3.6em;
+        text-align: center;
+        color: var(--Color-secundario);
+    }
+    .contenedor {
+        margin-top: 4rem;
+    }
+    .contenedor img {
+        width: 50vw;
+        height: auto;
+        filter: var(--sombra-imagenes);
+    }
+    #cel {
+        position: absolute;
+        width: 13vw;
+        height: auto;
+        filter: var(--sombra-imagenes);
+        margin-left: -50vw;
+        margin-top: 5vh;
+    }
+    /* habilidades */
+    #Habilidades{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--Color-secundario);
+    }
+    #Habilidades h1 {
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    .habilidades {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding-top:1rem ;
+        padding-bottom:2rem ;
+    }
+    .habilidades img {
+        width: 15vw;
+        height: 15vw;
+        filter:var(--sombra-imagenes);
+        padding:1rem;
+    }
+     /* servicios */
+     #Servicios{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    #Servicios h1 {
+        text-align: center;
+        font-size: 3em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    .services {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90vw;
+        padding-top: 1rem;
+    }
+    .services .servicio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width:28vw;
+        min-height:30vh;
+        border-radius: .70rem;
+        border: 2px solid var(--Color-secundario);
+        margin:1rem 0;
+        box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+        padding: 1.5em;
+    }
+    .services .servicio h3 {
+        text-align: center;
+        font-size: 1.5em;
+        color:var(--Color-secundario);
+        padding-top: 1rem;
+    }
+    .services .servicio img{
+        margin: 1rem 0;
+        width: 7vw;
+        height: 7vw;
+    }
+    .services .servicio p {
+     line-height: 1.5;
+     color: white;
+     text-align: center;
+     font-size: 1.2em;
+    }
+    .services .servicio:hover {
+        background-color: var(--Color-secundario);
+        border: 2px solid var(--Color-primario);
+        transition: 0.5s;
+    }
+    .services .servicio:hover h3 {
+        color: white;
+    }    
+    /* Portafolio */
+    #Portafolio {
+        display: none;
+    }
+    /* Clientes */
+    #Clientes{
+        display: none;
+    }
+    /* contactanos */
+    #Contacto {
+        margin-top: 5vh ;
+        width:100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #Contacto h1 {
+        text-align: center;
+        font-size: 3em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    #Contacto .Contactanos {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        width: 95vw;
+        padding: 4rem 0.5rem;
+    }
+    #Contacto .Contactanos .formulario {
+        width: 40vw;
+    }
+    #Contacto .Contactanos .formulario input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+    label{
+        display: flex;
+        color: white;
+        font-size: 1.2em;
+    }
+    label p {
+        color: red;
+    }
+    #info {
+        color: red;
+        line-height: 1.5;
+        margin-bottom:.7rem ;
+        font-size: 1.2em;
+    }
+    #enviar{
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 30px;
+        border: 0;
+        color: white;
+        background-color: var(--Color-secundario);
+    }  
+    #Contacto .Contactanos .contacto{
+      padding:2rem;
+      width: 45vw;
+    }  
+    #Contacto .Contactanos .contacto h3,p{
+        color: white;
+        line-height: 1.5;
+        font-size: 1.4em;
+    }
+    #Contacto .Contactanos .contacto p{
+        margin-top: .5rem;
+        font-size: 1.2em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    span {
+        color: var(--Color-secundario);
+    }
+    /* boton-arriba */
+    .boton-arriba{
+        display: none;
+        width: 3.5vw;
+        height: 3.5vw;
+        bottom: 2vh;
+        right: 2vw;
+        position: fixed;
+        cursor: pointer;
+        outline: none;
+        background-color: var(--Color-primario);
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-property: background-color, color;
+        cursor: pointer;
+    }    
+    .boton-arriba  img{
+        margin:.375rem;
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+    /* footer */
+    footer {
+        margin-top:5rem;
+        border-top: 2px solid white;
+        min-height: 5vh;
+        background-color: var(--Color-secundario);
+        padding: 1em;
+    }
+    footer h4{
+        text-align: center;
+        color: white;
+    }
+}
 
 /* escritorio y otros */
 @media(min-width:1200px) {
-   
+    /* hero */
+    .hero {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        height:100vh;
+        width: 100%;
+        margin-top: 1rem;
+        padding:8rem 3rem;
+    }
+    .hero h1{
+        font-size: 3.6em;
+        text-align: center;
+        color: var(--Color-secundario);
+    }
+    .contenedor {
+        margin-top: 4rem;
+    }
+    .contenedor img {
+        width: 50vw;
+        height: auto;
+        filter: var(--sombra-imagenes);
+    }
+    #cel {
+        position: absolute;
+        width: 13vw;
+        height: auto;
+        filter: var(--sombra-imagenes);
+        margin-left: -50vw;
+        margin-top: 14.138438880706921vh;
+    }
+    /* habilidades */
+    #Habilidades{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--Color-secundario);
+    }
+    #Habilidades h1 {
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    .habilidades {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding-top:1rem ;
+        padding-bottom:2rem ;
+    }
+    .habilidades img {
+        width: 10vw;
+        height: 10vw;
+        filter:var(--sombra-imagenes);
+        padding:1rem;
+    }
+     /* servicios */
+     #Servicios{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    #Servicios h1 {
+        text-align: center;
+        font-size: 3em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    .services {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 65vw;
+        padding-top: 1rem;
+    }
+    .services .servicio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width:20vw;
+        min-height:35vh;
+        border-radius: .70rem;
+        border: 2px solid var(--Color-secundario);
+        margin:1rem 0;
+        box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+        padding: 1.5em;
+    }
+    .services .servicio h3 {
+        text-align: center;
+        font-size: 1.5em;
+        color:var(--Color-secundario);
+        padding-top: 1rem;
+    }
+    .services .servicio img{
+        margin: 1rem 0;
+        width: 7vw;
+        height: 7vw;
+    }
+    .services .servicio p {
+     line-height: 1.5;
+     color: white;
+     text-align: center;
+     font-size: 1.2em;
+    }
+    .services .servicio:hover {
+        background-color: var(--Color-secundario);
+        border: 2px solid var(--Color-primario);
+        transition: 0.5s;
+    }
+    .services .servicio:hover h3 {
+        color: white;
+    }    
+    /* Portafolio */
+    #Portafolio {
+        display: none;
+    }
+    /* Clientes */
+    #Clientes{
+        display: none;
+    }
+    /* contactanos */
+    #Contacto {
+        width:100vw;
+        min-height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #Contacto h1 {
+        text-align: center;
+        font-size: 3em;
+        color: var(--Color-secundario);
+        line-height: 1.5;
+        padding-top: 2rem;
+    }
+    #Contacto .Contactanos {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        width: 90vw;
+        padding: 4rem 0.5rem;
+    }
+    #Contacto .Contactanos .formulario {
+        width: 35vw;
+    }
+    #Contacto .Contactanos .formulario input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+    label{
+        display: flex;
+        color: white;
+        font-size: 1.2em;
+    }
+    label p {
+        color: red;
+    }
+    #info {
+        color: red;
+        line-height: 1.5;
+        margin-bottom:.7rem ;
+        font-size: 1.2em;
+    }
+    #enviar{
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 30px;
+        border: 0;
+        color: white;
+        background-color: var(--Color-secundario);
+    }  
+    #Contacto .Contactanos .contacto{
+      padding:2rem;
+      width: 40vw;
+    }  
+    #Contacto .Contactanos .contacto h3,p{
+        color: white;
+        line-height: 1.5;
+        font-size: 1.4em;
+    }
+    #Contacto .Contactanos .contacto p{
+        margin-top: .5rem;
+        font-size: 1.2em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    span {
+        color: var(--Color-secundario);
+    }
+    /* boton-arriba */
+    .boton-arriba{
+        display: none;
+        width: 3.5vw;
+        height: 3.5vw;
+        bottom: 2vh;
+        right: 2vw;
+        position: fixed;
+        cursor: pointer;
+        outline: none;
+        background-color: var(--Color-primario);
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-property: background-color, color;
+        cursor: pointer;
+    }    
+    .boton-arriba  img{
+        margin:.375rem;
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+    /* footer */
+    footer {
+        margin-top:5rem;
+        border-top: 2px solid white;
+        min-height: 5vh;
+        background-color: var(--Color-secundario);
+        padding: 1em;
+    }
+    footer h4{
+        text-align: center;
+        color: white;
+    }
+
 }
 
 /* print */
-@media print {}
+@media print {
+  /* hero */
+.hero{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b262c;
+    margin-bottom: 3rem;
+}
+.hero h1{
+    padding:6rem 1rem;
+    color:var(--Color-secundario);
+    text-align: center;
+    font-size: 2.4em;
+}
+.hero img {
+    padding:0 2rem;
+    width: 100vw;
+    height: auto;
+    filter: var(--sombra-imagenes);
+}
+.hero #cel {
+    width: 28vw;
+    height: auto;
+    margin-top:-90vh;
+    padding:0.5rem;
+    margin-left: 1rem ;
+}
+/* habilidades */
+#Habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--Color-secundario);
+}
+#Habilidades h1 {
+    text-align: center;
+    font-size: 2.4em;
+    color: white;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.habilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top:1rem ;
+    padding-bottom:2rem ;
+}
+.habilidades img {
+    width: 20vw;
+    height: 20vw;
+    filter:var(--sombra-imagenes);
+    padding:1rem;
+}
+/* servicios */
+#Servicios{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#Servicios h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 95vw;
+    padding-top: 1rem;
+}
+.services .servicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    min-height:35vh;
+    border-radius: .70rem;
+    border: 2px solid var(--Color-secundario);
+    margin:1rem 0;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+}
+.services .servicio h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color:var(--Color-secundario);
+    padding-top: 1rem;
+}
+.services .servicio img{
+    margin: 1rem 0;
+    width: 12vw;
+    height: 12vw;
+}
+.services .servicio p {
+ line-height: 1.5;
+ color: white;
+ text-align: center;
+ font-size: 1.2em;
+}
+.services .servicio:hover {
+    background-color: var(--Color-secundario);
+    border: 2px solid var(--Color-primario);
+    transition: 0.5s;
+}
+.services .servicio:hover h3 {
+    color: white;
+}    
+/* Portafolio */
+#Portafolio {
+    display: none;
+}
+/* Clientes */
+#Clientes{
+    display: none;
+}
+/* contactanos */
+#Contacto {
+    width:100vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Contacto h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--Color-secundario);
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+#Contacto .Contactanos {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    padding: 0 0.5rem;
+}
+#Contacto .Contactanos .formulario input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+label{
+    display: flex;
+    color: white;
+    font-size: 1.2em;
+}
+label p {
+    color: red;
+}
+#info {
+    color: red;
+    line-height: 1.5;
+    margin-bottom:.7rem ;
+    font-size: 1.2em;
+}
+#enviar{
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+    background-color: var(--Color-secundario);
+}  
+#Contacto .Contactanos .contacto{
+  padding:2rem 0;
+  width: 100%;
+}  
+#Contacto .Contactanos .contacto h3,p{
+    color: white;
+}
+#Contacto .Contactanos .contacto p{
+    margin-top: .5rem;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: left;
+}
+span {
+    color: var(--Color-secundario);
+}  
+}
