@@ -100,8 +100,6 @@ function validar1 (e){
     }
 
 }
-
-
 // boton arriba
 const backToTopButton = document.querySelector("#up");
 
@@ -152,8 +150,6 @@ function easeInOutCubic(t, b, c, d) {
 	t -= 2;
 	return c/2*(t*t*t + 2) + b;
 };
-
-
 
 
 
